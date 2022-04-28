@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from tms.models import Category, Product
+from tms.models import Category, Product, Cart
 
 
 @admin.register(Category)
@@ -9,5 +9,11 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Product)
-class Productdmin(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'price']
+
+
+
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
+    list_display = ['user', 'total_price']
